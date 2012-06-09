@@ -1,0 +1,13 @@
+<project name="xslUI" basedir=".">
+	<batchtest todir="${test.report.dir}">
+	    <fileset dir="${test.src.dir}">
+	      <include name="**/TestStmtCoverage.java"/>
+	      <include name="**/TestRegistry.java"/>
+	    </fileset>
+	  </batchtest>
+	
+	<target name="junit">
+		
+	</target>
+</project>
+

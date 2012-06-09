@@ -1,0 +1,67 @@
+<n1:aseXML xmlns:n1="urn:aseXML:r17" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:aseXML:r17 http://www.nemmco.com.au/aseXML/schemas/r17/aseXML_r17.xsd">
+	<Header>
+		<From>EASTENGY</From>
+		<To>ENERGYAP</To>
+		<MessageID>ENERGYAP-MSG-B6433</MessageID>
+		<MessageDate>2007-08-08T15:52:15.325+10:00</MessageDate>
+		<TransactionGroup>SORD</TransactionGroup>
+		<Priority>Medium</Priority>
+		<Market>NEM</Market>
+	</Header>
+	<Transactions>
+		<Transaction transactionID="ENERGYAP-TNS-B6056" transactionDate="2007-08-08T15:52:15.325+10:00" initiatingTransactionID="BPM-7000a-20070802113902-70-dcc130a7">
+			<ServiceOrderResponse xmlns:ns7="urn:aseXML:r17" version="r17" responseType="Closure">
+				<ServiceOrder>
+					<NMI checksum="0">4103675056</NMI>
+					<ServiceOrderNumber>8313070248</ServiceOrderNumber>
+					<ServiceProviderReference>2313</ServiceProviderReference>
+				</ServiceOrder>
+				<ContactDetail>
+					<PersonName>
+						<NameTitle>Mr</NameTitle>
+						<GivenName>John</GivenName>
+						<FamilyName>Smith</FamilyName>
+					</PersonName>
+					<PostalAddress>
+						<AustralianAddress>
+							<StructuredAddress>
+								<House>
+									<HouseNumber>42</HouseNumber>
+								</House>
+								<Street>
+									<StreetName>Leman</StreetName>
+									<StreetType>ST</StreetType>
+								</Street>
+							</StructuredAddress>
+							<SuburbOrPlaceOrLocality>COASTAL PARK</SuburbOrPlaceOrLocality>
+							<StateOrTerritory>VIC</StateOrTerritory>
+							<PostCode>3244</PostCode>
+						</AustralianAddress>
+					</PostalAddress>
+					<PhoneNumber serviceType="Fixed Voice">
+						<Prefix>03</Prefix>
+						<Number>98529535</Number>
+					</PhoneNumber>
+				</ContactDetail>
+				<AppointmentDetail>
+					<Preferred>
+						<Date>2007-09-01</Date>
+						<Time>09:00:00+10:00</Time>
+					</Preferred>
+				</AppointmentDetail>
+				<NotificationData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns7:ElectricityServiceOrderNotificationData">
+					<SpecialNotes>
+						<CommentLine>eqweqw</CommentLine>
+					</SpecialNotes>
+					<ServiceOrderStatus>Completed</ServiceOrderStatus>
+					<ResponseCode>Meter Reading Only Undertaken Due To Prior Re-energisation</ResponseCode>
+					<ActualDateTime>2007-08-08T12:00:00+10:00</ActualDateTime>
+					<Product>
+						<Code>No charge</Code>
+					</Product>
+				</NotificationData>
+				
+			</ServiceOrderResponse>
+		</Transaction>
+	</Transactions>
+</n1:aseXML>

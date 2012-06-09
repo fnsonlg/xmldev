@@ -1,5 +1,7 @@
 package com.grv.xml;
 
+import java.io.IOException;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -9,16 +11,6 @@ import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class XMLValidator extends DefaultHandler {
-    public static void main(String[] argv) {
-	System.out.println("Verma");
-	long startTime = System.currentTimeMillis();
-	String SchemaUrl = "aseXMLR16/aseXML_r16.xsd";
-	String XmlDocumentUrl = "asexml.xml";
-	XMLValidator validator = new XMLValidator();
-	validator.validateSchema(SchemaUrl, XmlDocumentUrl);
-	System.out.println("Gaurav");
-	System.out.println("Time taken " + (System.currentTimeMillis() - startTime));
-    }
 
     public boolean validationError = false;
 
@@ -36,7 +28,7 @@ public class XMLValidator extends DefaultHandler {
 	saxParseException = exception;
     }
 
-    public void validateSchema(String SchemaUrl, String XmlDocumentUrl) {
+    public void validateSchema(String SchemaUrl, String XmlDocumentUrl) throws IOException, SAXException, ParserConfigurationException {
 	try {
 	    System.setProperty("javax.xml.parsers.DocumentBuilderFactory", "org.apache.xerces.jaxp.DocumentBuilderFactoryImpl");
 	    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -55,10 +47,15 @@ public class XMLValidator extends DefaultHandler {
 	    }
 	} catch (java.io.IOException ioe) {
 	    System.out.println("IOException " + ioe.getMessage());
-	} catch (SAXException e) {
-	    System.out.println("SAXException" + e.getMessage());
+	    throw ioe;
+
+	} catch (SAXException saxe) {
+	    System.out.println("SAXException" + saxe.getMessage());
+	    throw saxe;
+
 	} catch (ParserConfigurationException e) {
-	    System.out.println("ParserConfigurationException                    " + e.getMessage());
+	    System.out.println("ParserConfigurationException" + e.getMessage());
+	    throw e;
 	}
     }
 
