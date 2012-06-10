@@ -24,84 +24,87 @@ import com.grv.xml.XMLValidator;
  */
 public class XMLValidatorTest extends TestCase {
 
-    /**
-     * Construct new test instance
-     * 
-     * @param name
-     *            the test name
-     */
-    public XMLValidatorTest(String name) {
-	super(name);
-    }
-
-    /**
-     * Perform pre-test initialization
-     * 
-     * @throws Exception
-     * 
-     * @see TestCase#setUp()
-     */
-    @Override
-    protected void setUp() throws Exception {
-	super.setUp();
-	// Add additional set up code here
-    }
-
-    /**
-     * Perform post-test clean up
-     * 
-     * @throws Exception
-     * 
-     * @see TestCase#tearDown()
-     */
-    @Override
-    protected void tearDown() throws Exception {
-	super.tearDown();
-	// Add additional tear down code here
-    }
-
-    @Test
-    public void testValidateAseXMLIncorrectR16() {
-	XMLValidator validator = new XMLValidator();
-	try {
-	    validator.validateSchema("aseXMLR17/aseXML_r17.xsd", "asexml16.xml");
-	} catch (IOException e) {
-	    fail();
-	} catch (SAXException e) {
-	    fail();
-	} catch (ParserConfigurationException e) {
-	    fail();
-	}
-    }
-
-    @Test
-    public void testValidateAseXMLR16() {
-	XMLValidator validator = new XMLValidator();
-	try {
-	    validator.validateSchema("aseXMLR16/aseXML_r16.xsd", "asexml16.xml");
-	} catch (IOException e) {
-	    fail();
-	} catch (SAXException e) {
-	    fail();
-	} catch (ParserConfigurationException e) {
-	    fail();
+	/**
+	 * Construct new test instance
+	 * 
+	 * @param name
+	 *            the test name
+	 */
+	public XMLValidatorTest(String name) {
+		super(name);
 	}
 
-    }
-
-    @Test
-    public void testValidateAseXMLR17() {
-	XMLValidator validator = new XMLValidator();
-	try {
-	    validator.validateSchema("aseXMLR17/aseXML_r17.xsd", "asexml17.xml");
-	} catch (IOException e) {
-	    fail();
-	} catch (SAXException e) {
-	    fail();
-	} catch (ParserConfigurationException e) {
-	    fail();
+	/**
+	 * Perform pre-test initialization
+	 * 
+	 * @throws Exception
+	 * 
+	 * @see TestCase#setUp()
+	 */
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
+		// Add additional set up code here
 	}
-    }
+
+	/**
+	 * Perform post-test clean up
+	 * 
+	 * @throws Exception
+	 * 
+	 * @see TestCase#tearDown()
+	 */
+	@Override
+	protected void tearDown() throws Exception {
+		super.tearDown();
+		// Add additional tear down code here
+	}
+
+	@Test
+	public void testValidateAseXMLIncorrectR16() {
+		XMLValidator validator = new XMLValidator();
+		try {
+			validator
+					.validateSchema("aseXMLR17/aseXML_r17.xsd", "asexml16.xml");
+		} catch (IOException e) {
+			fail();
+		} catch (SAXException e) {
+			fail();
+		} catch (ParserConfigurationException e) {
+			fail();
+		}
+	}
+
+	@Test
+	public void testValidateAseXMLR16() {
+		XMLValidator validator = new XMLValidator();
+		try {
+			validator
+					.validateSchema("aseXMLR16/aseXML_r16.xsd", "asexml16.xml");
+		} catch (IOException e) {
+			fail();
+		} catch (SAXException e) {
+			fail();
+		} catch (ParserConfigurationException e) {
+			fail();
+		}
+
+	}
+
+	@Test
+	public void testValidateAseXMLR17() {
+		XMLValidator validator = new XMLValidator();
+		try {
+			validator
+					.validateSchema("aseXMLR17/aseXML_r17.xsd", "asexml17.xml");
+		} catch (IOException e) {
+			fail();
+		} catch (SAXException e) {
+			fail();
+		} catch (ParserConfigurationException e) {
+			fail();
+		}
+	}
 }
 
 /*

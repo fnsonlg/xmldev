@@ -1,13 +1,48 @@
-<project name="xslUI" basedir=".">
-	<batchtest todir="${test.report.dir}">
-	    <fileset dir="${test.src.dir}">
-	      <include name="**/TestStmtCoverage.java"/>
-	      <include name="**/TestRegistry.java"/>
-	    </fileset>
-	  </batchtest>
+<?xml version="1.0"?>
+<project name="XMLUtils" basedir="." default="jar" xmlns:ivy="antlib:org.apache.ivy.ant">
+	<property name="src" value="src/main/java" />
+	<property name="output" value="bin" />
 
-	<target name="junit">
-
+	<target name="clean">
+		<delete dir="${output}" />
 	</target>
-</project>
 
+	<target name="resolve" depends="clean">
+	        <ivy:retrieve/>
+	    </target>
+
+	<target name="compile" depends="resolve">
+		<javac destdir="bin">
+			<src path="${src}" />
+			<classpath refid="java" />
+		</javac>
+	</target>
+
+	<target name="jar" depends="junit">
+		<jar destfile="XMLUtils.jar">
+			<fileset dir="bin" />
+		</jar>
+	</target>
+
+
+	<target name="create" depends="clean">
+		<mkdir dir="${output}" />
+	</target>
+
+	<target name="junit" depends="compile">
+
+		<junit printsummary="yes" fork="yes" haltonfailure="yes">
+			  <formatter type="plain"/>
+			  <test name="com.grv.junit.XMLValidatorTest"/>
+			</junit>
+	</target>
+
+
+
+
+	<path id="java">
+		<fileset dir="c:\">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+</project>
