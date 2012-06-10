@@ -5,9 +5,9 @@
 	      <include name="**/TestRegistry.java"/>
 	    </fileset>
 	  </batchtest>
-	
+
 	<target name="junit">
-		
+
 	</target>
 </project>
 
